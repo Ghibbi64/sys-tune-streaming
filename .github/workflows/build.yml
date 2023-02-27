@@ -1,0 +1,19 @@
+name: Build sys-tune and overlay
+
+on: [push]
+jobs:
+  build:
+  
+    runs-on: ubuntu-latest
+    container: devkitpro/devkita64
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Building libnx-Ext
+      run: |
+        make -j$(nproc) -C sys-tune/nxExt
+
+    - name: Building sys-tune
+      run: |
+        API_VERSION=9 make -j$(nproc)

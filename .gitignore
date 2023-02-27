@@ -1,0 +1,11 @@
+*.elf
+*.nso
+*.nsp
+*.nro
+*.nacp
+*.npdm
+*.ovl
+.vscode
+build
+dist
+*.zip
